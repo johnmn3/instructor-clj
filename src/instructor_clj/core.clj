@@ -90,7 +90,7 @@
                   (if using-default?
                     (-> body :choices first :message :content)
                     (:response body)))]
-    (when-not (m/validate response-schema response)
+    (when (m/validate response-schema response)
       response)))
 
 (defn instruct
